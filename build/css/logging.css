@@ -1,0 +1,5 @@
+/*
+ * Original can be found at https://github.com/SanderRonde/CustomRightClickMenu 
+ * This code may only be used under the MIT style license found in the LICENSE.txt file 
+**/
+::-webkit-scrollbar-thumb{border-radius:10px;background-color:#5d5d5d}::-webkit-scrollbar{background-color:#282828;border-radius:10px;width:8px}body{font-size:75%;font-family:"Segoe UI",Tahoma,sans-serif}

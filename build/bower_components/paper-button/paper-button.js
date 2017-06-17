@@ -1,0 +1,1 @@
+Polymer({is:"paper-button",behaviors:[Polymer.PaperButtonBehavior],properties:{raised:{type:Boolean,reflectToAttribute:!0,value:!1,observer:"_calculateElevation"}},_calculateElevation:function(){this.raised?Polymer.PaperButtonBehaviorImpl._calculateElevation.apply(this):this._elevation=0},_computeContentClass:function(a){var b="content ";return a&&(b+=" keyboard-focus"),b}});

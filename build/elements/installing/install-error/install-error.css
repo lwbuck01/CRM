@@ -1,0 +1,1 @@
+#installErrorContainer{position:absolute;opacity:1;animation:fadeIn .5s cubic-bezier(.4,0,.2,1)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}#errorContainer{padding:100px;background-color:#EF2314;font-size:1000%;font-weight:700;color:#fff;-webkit-user-select:none;user-select:none}

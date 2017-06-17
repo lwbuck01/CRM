@@ -203,7 +203,6 @@ ModelManifest.xml
 /app/bower_components_uncrisp
 /app/web.*.*
 /DebugSettings.template.xml
-/build
 *.DotSettings
 /Custom Right-Click Menu.VC.db
 /Custom Right-Click Menu.VC.VC.opendb
@@ -221,9 +220,4 @@ Custom Right-Click Menu.sln
 
 /test/UI/secrets.js
 
-app/js/background.js
 .vscode
-app/elements/*/*.js
-app/elements/**/*.js
-test/UITest.js
-!app/elements/change-log/changelog.js

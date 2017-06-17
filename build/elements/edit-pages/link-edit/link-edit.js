@@ -1,0 +1,5 @@
+/*
+ * Original can be found at https://github.com/SanderRonde/CustomRightClickMenu 
+ * This code may only be used under the MIT style license found in the LICENSE.txt file 
+**/
+"use strict";var linkEditProperties={item:{type:Object,value:{},notify:!0}},LE=function(){function a(){}return a.init=function(){this._init()},a.ready=function(){window.linkEdit=this},a.saveChanges=function(a){a.value=[],$(this.$.linksContainer).find(".linkChangeCont").each(function(){a.value.push({url:$(this).children("paper-input")[0].value,newTab:"true"!==$(this).children("paper-checkbox")[0].getAttribute("aria-checked")})})},a.checkboxStateChange=function(a){var b=window.app.util.findElementWithTagname(a.path,"paper-checkbox");$(this.$.linksContainer).find("paper-checkbox").each(function(){this!==b&&this.removeAttribute("checked")})},a.addLink=function(){window.linkEdit.push("newSettings.value",{url:"https://www.example.com",newTab:!0})},a.toggleCheckbox=function(a){$(window.app.util.findElementWithClassName(a.path,"linkChangeCont")).children("paper-checkbox").click()},a}();LE.is="link-edit",LE.behaviors=[Polymer.NodeEditBehavior],LE.properties=linkEditProperties,Polymer(LE);

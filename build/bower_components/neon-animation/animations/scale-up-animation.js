@@ -1,0 +1,1 @@
+Polymer({is:"scale-up-animation",behaviors:[Polymer.NeonAnimationBehavior],configure:function(a){var b=a.node;return a.transformOrigin&&this.setPrefixedProperty(b,"transformOrigin",a.transformOrigin),this._effect=new KeyframeEffect(b,[{transform:"scale(0)"},{transform:"scale(1)"}],this.timingFromConfig(a)),this._effect}});

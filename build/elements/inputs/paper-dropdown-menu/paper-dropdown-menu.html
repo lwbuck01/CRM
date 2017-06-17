@@ -1,0 +1,143 @@
+<html>
+<head>
+</head>
+<body>
+	<dom-module id="paper-dropdown-menu" attributes="selected indent overflowing label fancylabel raised subtext">
+		<link rel="import" href="../paper-dropdown-behavior/paper-dropdown-behavior.html"/>
+		<template>
+			<style>
+paper-menu {
+	box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+paper-dropdown-menu paper-menu {
+	width: 340px;
+}
+
+#dropdownArrow {
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	fill: rgb(38, 153, 244);
+	margin-left: 5px;
+}
+
+#dropdownSelectedCont {
+	display: inline-block;
+	cursor: pointer;
+	border-bottom: 1px solid transparent;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+	#dropdownSelectedCont:hover {
+		border-bottom: 1px solid rgb(38, 153, 244);
+	}
+
+#dropdownSelected {
+	color: rgb(38, 153, 244);
+	font-size: 150%;
+	font-weight: 500;
+	display: inline-block;
+}
+
+paper-menu .content {
+	height: 0;
+	overflow: hidden;
+	display: none;
+}
+
+.menuSelectedCheckmark, .addLibraryPlusImg {
+	margin-right: 0 !important;
+}
+
+.menuSelectedCheckmark {
+	display: none;
+}
+
+.menuOptionName {
+	padding-left: 38px;
+}
+
+paper-item[aria-selected=true] .menuSelectedCheckmark {
+	display: inline-block;
+}
+
+paper-item[aria-selected=true] .menuOptionName {
+	padding-left: 8px;
+}
+
+paper-dropdown-menu[indent=false] #dropdownSelectedCont {
+	margin-left: 0;
+}
+
+#contentCont[overflowing] .content {
+	margin-bottom: -15px;
+}
+
+paper-dropdown-menu {
+	display: -webkit-flex;
+	display: flex;
+}
+
+paper-dropdown-menu[fancylabel] {
+	display: block;
+}
+
+#dropdownLabel {
+	margin-right: 15px;
+}
+
+#fancyDropdownlabel {
+	box-shadow: rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 5px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px;
+    width: 330px;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 5px;
+	font-size: 150%;
+    font-weight: bold;
+    text-transform: capitalize;
+	text-align: center;
+}
+
+#fancyDropdownSubtext {
+	font-size: 60%;
+	font-weight: normal;
+}			</style>
+			<template is="dom-if" if="[[_hasFancyLabel(fancylabel)]]"> 
+				<div id="fancyDropdownlabel">
+					<div>[[label]]</div>
+					<template is="dom-if" if="[[!_hasNoSubtext(subtext)]]">
+						<div id="fancyDropdownSubtext">[[subtext]]</div>
+					</template>
+				</div>
+			</template>
+			<template is="dom-if" if="[[!_hasFancyLabel(fancylabel)]]">
+				<div id="dropdownLabel" hidden="[[_hasNoLabel(label)]]">
+					<span>[[label]]</span>
+					<span>:</span>
+				</div>
+			</template>
+			<div on-tap="_toggleDropdown" id="dropdownSelectedCont">
+				<div id="dropdownSelected"></div>
+				<svg id="dropdownArrow" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 48 48"><path d="M16 10v28l22-14z"/></svg>
+			</div>
+			<div id="contentCont" overflowing$="[[overflowing]]">
+				<content select="paper-menu"></content>
+			</div>
+		</template>
+	</dom-module>
+	<script src="paper-dropdown-menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+/*
+ * Original can be found at https://github.com/SanderRonde/CustomRightClickMenu 
+ * This code may only be used under the MIT style license found in the LICENSE.txt file 
+**/
+"use strict";var paperDropdownMenuProperties={selected:{type:Number,reflectToAttribute:!0,notify:!0},label:{type:String,notify:!0,value:""},fancylabel:{type:Boolean,value:!1},subtext:{type:String,value:""}},PDM=function(){function a(){}return a._hasNoLabel=function(a){return!(a&&""!==a)},a._hasNoSubtext=function(a){return!(a&&""!==a)},a._hasFancyLabel=function(a){return!!this.fancylabel},a._dropdownSelectChange=function(a){var b=$(a).find("paper-item"),c=a._paperMenu.selected;a.$.dropdownSelected.innerHTML=b[c].children[1]&&b[c].children[1].innerHTML||"EXPORT AS"},a.init=function(){var a=$(this).find("paper-item");this.$.dropdownSelected.innerHTML=$(a[this.selected]).children(".menuOptionName").html(),this.refreshListeners()},a.ready=function(){null!==this.getAttribute("init")&&this.init()},a}();PDM.is="paper-dropdown-menu",PDM.behaviors=[Polymer.PaperDropdownBehavior],PDM.properties=paperDropdownMenuProperties,Polymer(PDM);

@@ -1,0 +1,1 @@
+Polymer.IronFormElementBehavior={properties:{name:{type:String},value:{notify:!0,type:String}},attached:function(){this.fire("iron-form-element-register")}};

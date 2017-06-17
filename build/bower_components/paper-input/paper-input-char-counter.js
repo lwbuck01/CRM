@@ -1,0 +1,1 @@
+!function(){Polymer({is:"paper-input-char-counter",behaviors:[Polymer.PaperInputAddonBehavior],properties:{_charCounterStr:{type:String,value:"0"}},update:function(a){if(a.inputElement){a.value=a.value||"";var b=a.value.replace(/(\r\n|\n|\r)/g,"--").length;a.inputElement.hasAttribute("maxlength")&&(b+="/"+a.inputElement.getAttribute("maxlength")),this._charCounterStr=b}}})}();

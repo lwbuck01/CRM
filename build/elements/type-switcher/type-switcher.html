@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<dom-module id="type-switcher" attributes="type">
+	<template>
+		<style>
+.TSContainer {
+	width: 200px;
+	margin-left:-193px;
+	height:50px;
+	color:white;
+	text-align: center;
+}
+
+.TSContainer[link], .typeSwitchChoice[type=link] {
+	background-color: #3F51B5;
+}
+
+.TSContainer[script], .typeSwitchChoice[type=script] {
+	background-color: #F44336;
+}
+
+.TSContainer[menu], .typeSwitchChoice[type=menu] {
+	background-color: #4CAF50;
+}
+
+.TSContainer[divider], .typeSwitchChoice[type=divider] {
+	background-color: #FFC107;
+}
+
+.TSContainer[stylesheet], .typeSwitchChoice[type=stylesheet] {
+	background-color: #AA00FF;
+}
+
+.typeSwitchChoice {
+	width: 200px;
+	height:50px;
+	color:white;
+	text-align: center;
+}
+
+#typeText, .typeSwitchChoiceText {
+	font-size: 141%;
+	text-transform: uppercase;
+}
+
+#typeSwitchArrow {
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+	width: 15px;
+	height: 24px;
+	display: block;
+	background-size: contain;
+	float: right;
+	margin-right: 7px;
+	margin-top: 13px;
+	fill: white;
+}
+
+#typeSwitchChoicesContainer {
+	display: none;
+}			</style>
+		<div on-tap="toggleTypeSwitch" link$="{{isLink}}" script$="{{isScript}}" divider$="{{isDivider}}" menu$="{{isMenu}}" stylesheet$="{{isStylesheet}}" class="TSContainer">
+			<span id="typeTxt"></span>
+			<svg id="typeSwitchArrow" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48">
+				<path d="M16 10v28l22-14z"/>
+			</svg>
+		</div>
+		<div id="typeSwitchChoicesContainer">
+			<template is="dom-repeat" items="{{remainingTypes}}" as="remainingType">
+				<div on-tap="changeType" class="typeSwitchChoice">
+					<span class="typeSwitchChoiceTxt">[[remainingType]]</span>
+				</div>
+			</template>
+		</div>
+	</template>
+</dom-module>
+<script src="type-switcher.js"></script>

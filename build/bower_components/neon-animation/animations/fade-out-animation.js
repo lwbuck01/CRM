@@ -1,0 +1,1 @@
+Polymer({is:"fade-out-animation",behaviors:[Polymer.NeonAnimationBehavior],configure:function(a){var b=a.node;return this._effect=new KeyframeEffect(b,[{opacity:"1"},{opacity:"0"}],this.timingFromConfig(a)),this._effect}});

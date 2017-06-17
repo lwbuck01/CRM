@@ -1,0 +1,1 @@
+Polymer.PaperInkyFocusBehaviorImpl={observers:["_focusedChanged(receivedFocusFromKeyboard)"],_focusedChanged:function(a){this.$.ink&&(this.$.ink.holdDown=a)}},Polymer.PaperInkyFocusBehavior=[Polymer.IronButtonState,Polymer.IronControlState,Polymer.PaperInkyFocusBehaviorImpl];

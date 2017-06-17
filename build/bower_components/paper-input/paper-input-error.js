@@ -1,0 +1,1 @@
+!function(){Polymer({is:"paper-input-error",behaviors:[Polymer.PaperInputAddonBehavior],hostAttributes:{role:"alert"},properties:{invalid:{readOnly:!0,reflectToAttribute:!0,type:Boolean}},update:function(a){this._setInvalid(a.invalid)}})}();

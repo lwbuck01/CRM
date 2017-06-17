@@ -1,0 +1,87 @@
+{
+	"manifest_version": 2,
+
+	"options_page": "html/options.html",
+	"name": "Custom Right-Click Menu",
+	"description": "Create a custom right-click menu and choose the links you to have in it. You can even add your own scripts or markup for the page.",
+	"version": "2.0.11",
+	"short_name": "CRM",
+	"minimum_chrome_version": "26",
+
+	"background": {
+		"page": "html/background.html"
+	},
+
+	"content_scripts": [
+		{
+			"matches": [ "<all_urls>" ],
+			"js": [ "js/contentscript.js" ]
+		}, {
+			"matches": [ "http://userstyles.org/*", "https://userstyles.org/*" ],
+			"js": [ "js/installStylesheet.js" ],
+			"run_at": "document_end" 
+		}
+	],
+
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+
+	"permissions": [
+		"<all_urls>",
+		"activeTab",
+		"contextMenus",
+		"storage",
+		"tabs",
+		"management",
+		"unlimitedStorage",
+		"webRequest",
+		"webRequestBlocking"
+	],
+
+	"web_accessible_resources": [
+		"js/jquery-2.0.3.js",
+		"js/crmapi.js",
+		"html/install.html",
+		"html/logging.html"
+	],
+
+	"optional_permissions": [
+		"alarms",
+		"background",
+		"bookmarks",
+		"browsingData",
+		"clipboardRead",
+		"clipboardWrite",
+		"contentSettings",
+		"cookies",
+		"declarativeContent",
+		"desktopCapture",
+		"downloads",
+		"history",
+		"identity",
+		"idle",
+		"management",
+		"notifications",
+		"pageCapture",
+		"power",
+		"printerProvider",
+		"privacy",
+		"sessions",
+		"system.cpu",
+		"system.memory",
+		"system.storage",
+		"topSites",
+		"tabCapture",
+		"tts",
+		"webNavigation",
+		"webRequest",
+		"webRequestBlocking"
+	],
+
+	"incognito": "spanning",
+
+	"icons": {
+		"16": "icon-supersmall.png",
+		"48": "icon-small.png",
+		"128": "icon-large.png"
+	}
+}

@@ -1,0 +1,1 @@
+Polymer.PaperRadioButtonInk={observers:["_focusedChanged(receivedFocusFromKeyboard)"],_focusedChanged:function(a){this.$.ink&&(this.$.ink.holdDown=a)}},Polymer.PaperRadioButtonBehavior=[Polymer.IronButtonState,Polymer.IronControlState,Polymer.PaperRadioButtonInk];

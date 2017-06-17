@@ -1,0 +1,1 @@
+Polymer.PaperInputAddonBehavior={hostAttributes:{"add-on":""},attached:function(){this.fire("addon-attached")},update:function(a){}};

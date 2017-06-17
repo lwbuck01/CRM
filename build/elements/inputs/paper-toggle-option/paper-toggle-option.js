@@ -1,0 +1,5 @@
+/*
+ * Original can be found at https://github.com/SanderRonde/CustomRightClickMenu 
+ * This code may only be used under the MIT style license found in the LICENSE.txt file 
+**/
+"use strict";var paperToggleOptionProperties={toggled:{type:Boolean,notify:!0},disabled:{type:Boolean,notify:!0},disabledreason:{type:String,notify:!0,value:"Your chrome version is too low for this to be possible (min is 34, you have "+~~/Chrome\/([0-9.]+)/.exec(navigator.userAgent)[1].split(".")[0]+")"},showmessage:{type:Boolean,notify:!0}},PTO=function(){function a(){}return a.setCheckboxDisabledValue=function(a){this.$.checkbox.disabled=a,this.disabled=a},a._showMessage=function(){return this.disabled&&this.showmessage},a.init=function(a){this.toggled=a[$(this).attr("id")]},a.onClick=function(){var a=this.getAttribute("id");this.toggled=!this.toggled,window.app.setLocal(a,this.toggled)},a}();PTO.is="paper-toggle-option",PTO.properties=paperToggleOptionProperties,Polymer(PTO);

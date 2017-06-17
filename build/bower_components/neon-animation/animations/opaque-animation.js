@@ -1,0 +1,1 @@
+Polymer({is:"opaque-animation",behaviors:[Polymer.NeonAnimationBehavior],configure:function(a){var b=a.node;return b.style.opacity="0",this._effect=new KeyframeEffect(b,[{opacity:"1"},{opacity:"1"}],this.timingFromConfig(a)),this._effect},complete:function(a){a.node.style.opacity=""}});

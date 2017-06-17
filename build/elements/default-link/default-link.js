@@ -1,0 +1,5 @@
+/*
+ * Original can be found at https://github.com/SanderRonde/CustomRightClickMenu 
+ * This code may only be used under the MIT style license found in the LICENSE.txt file 
+**/
+"use strict";var defaultLinkProperties={href:{type:String,notify:!0},defaultName:{type:String,notify:!0}},DL=function(){function a(){}return a.onClick=function(){var a,b=this.href,c=$(this.$.input).val(),d='var query;\nvar url = "'+b+"\";\nif (crmAPI.getSelection()) {\n\tquery = crmAPI.getSelection();\n} else {\n\tquery = window.prompt('Please enter a search query');\n}\nif (query) {\n\twindow.open(url.replace(/%s/g,query), '_blank');\n}";a=void 0!==this.searchEngine?window.app.templates.getDefaultScriptNode({id:window.app.generateItemId(),name:c,value:{script:d}}):window.app.templates.getDefaultLinkNode({id:window.app.generateItemId(),name:c,value:[{url:b,newTab:!0}]}),window.app.crm.add(a)},a.reset=function(){this.querySelector("input").value=this.defaultName},a}();DL.is="default-link",DL.searchEngine=!1,DL.properties=defaultLinkProperties,Polymer(DL);
